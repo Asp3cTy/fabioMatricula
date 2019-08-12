@@ -1,0 +1,58 @@
+listaDados = []
+dados = {"matricula": input("Digite sua matrícula: "),
+        "nome": input("Digite seu nome: "),
+        "disciplina": input("Digite sua disciplina: "),
+        "nota01": float(input("Digite sua nota01: ")),
+        "nota02": float(input("Digite sua nota02: "))}
+listaDados.append(dados)
+
+print(dados)
+
+opcao = 0
+while opcao != 5:
+    print('''   [1] - Cadastrar
+    [2] - Alterar
+    [3] - Listar
+    [4] - Excluir
+    [5] - Finalizar''')
+    opcao = int(input("Escolha uma das opções acima para seguir em frente: "))
+    if opcao == 1:
+        print("Precisamos verificar se a matrícula ja é existente!")
+        matricula = input("Matricula a verificar:  ")
+        if matricula == dados.get('matricula'):
+            print("A Matrícula",matricula,"já existe.")
+        print("A Matrícula", matricula,"não existe!")
+        verificarMatriculaNova = input("Pressione S para cadastrar a matrícula inexistente: ")
+        while verificarMatriculaNova == "S" or "s":
+                            print("Cadastre a matrícula abaixo!")
+                            dados = {"matricula": input("Digite sua matrícula: "),
+                                                 "nome": input("Digite seu nome: "),
+                                                 "disciplina": input("Digite sua disciplina: "),
+                                                 "nota01": float(input("Digite sua nota01: ")),
+                                                 "nota02": float(input("Digite sua nota02: "))}
+                            listaDados.append(dados)
+                            print("Cadastro realizado com Sucesso!")
+                            break
+    elif opcao == 2:
+        menu = 0
+        while menu != 2:
+            print('''   [1] - Matrícula
+            [2] - Voltar pro Menu Principal''')
+            menu = int(input("Escolha a opção que deseja alterar: "))
+            if menu == 1:
+                verificarMatricula = input("Digite a matrícula do aluno em que deseja alterar: ")
+                matriculaNova = {'matricula': input("Nova matrícula: ")}
+                dados.update(matriculaNova)
+                print("Matrícula alterada com Sucesso!")
+                print(listaDados)
+    elif opcao == 3:
+        print(listaDados)
+    elif opcao == 4:
+        dados.clear()
+print("Finalizando..")
+
+
+
+
+
+
