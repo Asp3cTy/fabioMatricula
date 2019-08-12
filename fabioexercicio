@@ -4,6 +4,8 @@ dados = {"matricula": input("Digite sua matrícula: "),
         "disciplina": input("Digite sua disciplina: "),
         "nota01": float(input("Digite sua nota01: ")),
         "nota02": float(input("Digite sua nota02: "))}
+soma = dados["media"] = (dados["nota01"] + dados["nota02"])
+media = dados["media"] = soma / 2
 listaDados.append(dados)
 
 print(dados)
@@ -30,13 +32,16 @@ while opcao != 5:
                                                  "disciplina": input("Digite sua disciplina: "),
                                                  "nota01": float(input("Digite sua nota01: ")),
                                                  "nota02": float(input("Digite sua nota02: "))}
+                            soma = dados["media"] = (dados["nota01"] + dados["nota02"])
+                            media = dados["media"] = soma / 2
                             listaDados.append(dados)
                             print("Cadastro realizado com Sucesso!")
                             break
     elif opcao == 2:
         menu = 0
         while menu != 2:
-            print('''   [1] - Matrícula
+            print('''
+            [1] - Matrícula
             [2] - Voltar pro Menu Principal''')
             menu = int(input("Escolha a opção que deseja alterar: "))
             if menu == 1:
